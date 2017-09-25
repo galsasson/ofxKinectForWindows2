@@ -18,7 +18,7 @@ namespace ofxKinectForWindows2 {
 			ofNode helper;
 			helper.lookAt(ofVec3f(floorClipPlane.x, floorClipPlane.z, -floorClipPlane.y));
 			helper.boom(-floorClipPlane.w);
-			ofMatrix4x4 transform = glm::inverse(helper.getGlobalTransformMatrix());
+			ofMatrix4x4 transform = helper.getGlobalTransformMatrix().getInverse();
 			return transform;
 		}
 
